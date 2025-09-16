@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class World : MonoBehaviour
+public class Pointer : MonoBehaviour
 {
-    private GameObject player;
-    public Camera cam;
 
-    // Start is called before the first frame update
+    public Camera cam;
+   
     void Start()
     {
-        Cursor.visible = false;
+        
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 point = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
-        Debug.Log(point);
+
+        transform.position = point;
     }
 }
